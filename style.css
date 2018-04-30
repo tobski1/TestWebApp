@@ -4,6 +4,8 @@ table, th, td {
     color:rgb(123, 157, 185);
     border: 1px solid black;
 
+}
 
-
-};
+tr:hover {
+    background-color: aquamarine;
+}
