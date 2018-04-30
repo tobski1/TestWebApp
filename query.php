@@ -20,3 +20,30 @@
         }
         sqlsrv_free_stmt($getResults);
         ?>
+
+<html>
+<head>
+<title> php test script - hope this works </title>
+</head>
+<body>
+<h1>php & mysql connection</h1>
+<hr>
+<table border = '2'>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+
+<?php
+while ($rows = $tsql->fetch()) 
+{
+    echo "<tr>";
+    echo "<td>" . $rows['pc.Name'] ."</td>";
+    echo "<td>" . $rows['p.name'] . "</td>";
+    echo "</tr>";
+}
+?>
+
+</table>
+</body>
+</html>
