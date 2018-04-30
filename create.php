@@ -27,7 +27,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
 //  try {
 //  $con=mysqli_init(); mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); mysqli_real_connect($con, "tobymysqlserver.mysql.database.azure.com", "toby@tobymysqlserver", "TheOffice1!!", "quickstartdb", 3306);
 //
-$query = "SELECT * FROM inventory";
+$query = 'SELECT * FROM inventory';
 echo $query;
  ?>
 
