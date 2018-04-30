@@ -8,7 +8,7 @@
  </style>
  </head>
  <body>
- <p>
+
  <?php
   try {
   $con=mysqli_init(); mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); mysqli_real_connect($con, "{tobymysqlserver.mysql.database.azure.com}", "{toby@tobymysqlserver}", {TheOffice1!!}, {quickstartdb}, 3306);
@@ -39,6 +39,6 @@
    echo 'ERROR: ' . $e->getMessage();
   } // end try
  ?>
- </p>
+
  </body>
 </html>
