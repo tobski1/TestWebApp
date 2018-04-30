@@ -1,6 +1,6 @@
 <?php
-$host = 'tobymysqlserver.mysql.database.azure.com';
-$username = 'toby@tobymysqlserver';
+$host = 'tobymysql.mysql.database.azure.com';
+$username = 'toby@tobymysql';
 $password = 'TheOffice1!!';
 $db_name = 'quickstartdb';
 
