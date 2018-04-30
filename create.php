@@ -50,7 +50,7 @@ foreach($result as $row){
 //    echo "0 results";
 //}
  ?>
-
+</table>
 
 
  </body>
