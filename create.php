@@ -10,6 +10,7 @@
  <body>
 
 
+
  <?php
 $servername = "tobymysqlserver.mysql.database.azure.com";
 $username = "toby@tobymysqlserver";
@@ -17,7 +18,8 @@ $password = "TheOffice1!!";
 $dbname = "quickstartdb";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$con=mysqli_init(); mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); mysqli_real_connect($con, "{tobymysqlserver.mysql.database.azure.com}", "{toby@tobymysqlserver}", {TheOffice1!!}, {quickstartdb}, 3306);
+  
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
