@@ -8,7 +8,7 @@
  </style>
  </head>
  <body>
- <?php
+
 
 <?php
 $host = 'tobymysqlserver.mysql.database.azure.com';
