@@ -23,12 +23,17 @@ if (mysqli_connect_errno($conn)) {
 die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
 
+$sql = "SELECT * FROM inventory";
+$result = $conn->query($sql);
 
-//  try {
-//  $con=mysqli_init(); mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); mysqli_real_connect($con, "tobymysqlserver.mysql.database.azure.com", "toby@tobymysqlserver", "TheOffice1!!", "quickstartdb", 3306);
-//
-$query = 'SELECT * FROM inventory';
-echo $query;
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "Name: " . $row["name"]. " - Quantity: " . $row["quantity"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
  ?>
 
 
