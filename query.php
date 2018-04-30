@@ -35,13 +35,11 @@
 </tr>
 
 <?php
-while ($rows = $tsql->fetch()) 
-{
     echo "<tr>";
-    echo "<td>" . $rows['pc.Name'] ."</td>";
-    echo "<td>" . $rows['p.name'] . "</td>";
+    echo "<td>" . $row['CategoryName'] ."</td>";
+    echo "<td>" . $row['ProductName'] . "</td>";
     echo "</tr>";
-}
+
 ?>
 
 </table>
