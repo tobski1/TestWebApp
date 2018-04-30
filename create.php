@@ -1,29 +1,42 @@
-<?php
-$host = 'tobymysqlserver.mysql.database.azure.com';
-$username = 'toby@tobymysqlserver';
-$password = 'TheOffice1!!';
-$db_name = 'quickstartdb';
+<!DOCTYPE html>
+<html lang = "en-US">
+ <head>
+ <meta charset = "UTF-8">
+ <title>contact.php</title>
+ <style type = "text/css">
+  table, th, td {border: 1px solid black};
+ </style>
+ </head>
+ <body>
 
-//Establishes the connection
-$conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
+
+ <?php
+$servername = "tobymysqlserver.mysql.database.azure.com";
+$username = "toby@tobymysqlserver";
+$password = "TheOffice1!!";
+$dbname = "quickstartdb";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT * FROM inventory";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<br> Name: ". $row["name"]. " - Quantity: ". $row["quantity"] . "<br>";
+    }
+} else {
+    echo "0 results";
 }
 
-// Run the create table query
-if (mysqli_query($conn, '
-CREATE TABLE Products (
-`Id` INT NOT NULL AUTO_INCREMENT ,
-`ProductName` VARCHAR(200) NOT NULL ,
-`Color` VARCHAR(50) NOT NULL ,
-`Price` DOUBLE NOT NULL ,
-PRIMARY KEY (`Id`)
-);
-')) {
-printf("Table created\n");
-}
+$conn->close();
+?> 
 
-//Close the connection
-mysqli_close($conn);
-?>
+ </body>
+</html>
